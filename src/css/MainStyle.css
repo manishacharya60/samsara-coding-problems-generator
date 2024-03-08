@@ -1,0 +1,10 @@
+.difficultylevel h2 {
+    font-weight: bold;
+}
+
+.examples pre code,
+.solution pre code,
+.explanation pre code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
