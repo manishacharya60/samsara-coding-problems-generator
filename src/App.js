@@ -9,6 +9,8 @@ import "prismjs/themes/prism-okaidia.css";
 // Custom CSS
 import "../src/css/MainStyle.css";
 
+import ProblemsContainer from "./components/ProblemsContainer";
+
 function App() {
     const [sections, setSections] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -17,9 +19,6 @@ function App() {
         Prism.highlightAll();
     }, [sections]);
 
-    const titleToClassName = (title) =>
-        title.toLowerCase().replace(/[^a-z0-9]+/g, "");
-
     const parseApiResponse = (responseContent) => {
         const sectionsRaw = responseContent
             .split("**")
@@ -27,13 +26,12 @@ function App() {
             .filter((section) => section !== "");
         const sections = [];
         for (let i = 0; i < sectionsRaw.length; i += 2) {
-            // Check if the section contains code (indicated by ```) and remove the backticks
             const content = sectionsRaw[i + 1]
                 .replace(
                     /```java\s*([\s\S]*?)\s*```/g,
                     "//Solution in Java Programming Language:\n$1"
                 )
-                .replace(/```\s*([\s\S]*?)\s*```/g, "");
+                .replace(/```/g, "");
             sections.push({
                 title: sectionsRaw[i],
                 content: content,
@@ -77,26 +75,11 @@ function App() {
 
     return (
         <div className="App">
-            <button onClick={fetchData} disabled={isLoading}>
-                {isLoading ? "Loading..." : "Fetch Data"}
-            </button>
-
-            {sections.map((section, index) => (
-                <div key={index} className={titleToClassName(section.title)}>
-                    <h2>{section.title}</h2>
-                    {section.title === "Solution:" ||
-                    section.title === "Explanation:" ||
-                    section.title === "Examples:" ? (
-                        <pre>
-                            <code className="language-java">
-                                {section.content}
-                            </code>
-                        </pre>
-                    ) : (
-                        <p>{section.content}</p>
-                    )}
-                </div>
-            ))}
+            <ProblemsContainer
+                sections={sections}
+                isLoading={isLoading}
+                fetchData={fetchData}
+            ></ProblemsContainer>
         </div>
     );
 }

@@ -1,0 +1,64 @@
+.ProblemsContainer {
+    background: #ecf0f1;
+    height: 75vh;
+    overflow: scroll;
+    padding: 1em;
+    border-radius: 7px;
+}
+
+.ProblemsContainer .nav {
+    background: #e5e5e5;
+    border-radius: 5px;
+    padding: 0.3em;
+}
+
+.ProblemsContainer .nav.nav-tabs {
+    border-bottom: none;
+    justify-content: space-around;
+}
+
+.ProblemsContainer .nav-tabs .nav-link {
+    border: none;
+    border-radius: 3px;
+    background: none;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #333333;
+}
+
+.ProblemsContainer .nav-tabs .nav-link.active {
+    background: #2c3e50;
+    color: #ecf0f1;
+}
+
+.ProblemsContainer .nav-tabs .nav-link:hover {
+    border: none;
+}
+
+.ProblemsContainer h3 {
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: bold;
+    color: #333333;
+    text-align: left;
+    margin: 0.5em 0;
+}
+
+.ProblemsContainer p {
+    color: #333333;
+    text-align: left;
+    margin: 0.1em 0;
+}
+
+.ProblemsContainer .fetch-data-button {
+    margin-top: 2em;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.7em 1.5em;
+    outline: none;
+    border-radius: 3px;
+    background: #2c3e50;
+    color: #ecf0f1;
+}
