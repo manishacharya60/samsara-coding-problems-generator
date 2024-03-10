@@ -10,6 +10,7 @@
     background: #e5e5e5;
     border-radius: 5px;
     padding: 0.3em;
+    margin-bottom: 2em;
 }
 
 .ProblemsContainer .nav.nav-tabs {
@@ -41,7 +42,7 @@
     font-weight: bold;
     color: #333333;
     text-align: left;
-    margin: 0.5em 0;
+    margin: 0.7em 0;
 }
 
 .ProblemsContainer p {
@@ -61,4 +62,8 @@
     border-radius: 3px;
     background: #2c3e50;
     color: #ecf0f1;
+}
+
+.ProblemsContainer .explanation .language-java {
+    color: #ffffff;
 }

@@ -2,6 +2,14 @@ import { Col, Container, Row } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 
+// Import the icons from FontAwesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faArrowAltCircleRight,
+    faCheckCircle,
+    faQuestionCircle,
+} from "@fortawesome/free-solid-svg-icons";
+
 // Custom CSS
 import "../css/ProblemsContainer.css";
 
@@ -18,7 +26,17 @@ function ProblemsContainer({ sections, isLoading, fetchData }) {
                             defaultActiveKey="questions"
                             id="coding-problems-tabs"
                         >
-                            <Tab eventKey="questions" title="Questions">
+                            <Tab
+                                eventKey="questions"
+                                title={
+                                    <>
+                                        Question{" "}
+                                        <FontAwesomeIcon
+                                            icon={faQuestionCircle}
+                                        />
+                                    </>
+                                }
+                            >
                                 {sections.map((section, index) => {
                                     if (
                                         section.title === "Question:" ||
@@ -53,10 +71,27 @@ function ProblemsContainer({ sections, isLoading, fetchData }) {
                                     onClick={fetchData}
                                     disabled={isLoading}
                                 >
-                                    {isLoading ? "Loading..." : "Fetch Data"}
+                                    {isLoading ? (
+                                        "Loading..."
+                                    ) : (
+                                        <>
+                                            Next{" "}
+                                            <FontAwesomeIcon
+                                                icon={faArrowAltCircleRight}
+                                            />
+                                        </>
+                                    )}
                                 </button>
                             </Tab>
-                            <Tab eventKey="solutions" title="Solutions">
+                            <Tab
+                                eventKey="solutions"
+                                title={
+                                    <>
+                                        Solution{" "}
+                                        <FontAwesomeIcon icon={faCheckCircle} />
+                                    </>
+                                }
+                            >
                                 {sections.map((section, index) => {
                                     if (
                                         section.title !== "Question:" &&
