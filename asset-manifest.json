@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/samsara-coding-problems-generator/static/css/main.6fbecd7c.css",
+    "main.js": "/samsara-coding-problems-generator/static/js/main.3c3f9bc3.js",
+    "static/js/453.04514686.chunk.js": "/samsara-coding-problems-generator/static/js/453.04514686.chunk.js",
+    "index.html": "/samsara-coding-problems-generator/index.html",
+    "main.6fbecd7c.css.map": "/samsara-coding-problems-generator/static/css/main.6fbecd7c.css.map",
+    "main.3c3f9bc3.js.map": "/samsara-coding-problems-generator/static/js/main.3c3f9bc3.js.map",
+    "453.04514686.chunk.js.map": "/samsara-coding-problems-generator/static/js/453.04514686.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6fbecd7c.css",
+    "static/js/main.3c3f9bc3.js"
+  ]
+}
