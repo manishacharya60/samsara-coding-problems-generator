@@ -1,4 +1,3 @@
-import OpenAI from "openai";
 import Prism from "prismjs";
 import React, { useState, useEffect } from "react";
 
@@ -43,31 +42,27 @@ function App() {
     const fetchData = async () => {
         setIsLoading(true);
 
-        const openai = new OpenAI({
-            apiKey: process.env["REACT_APP_OPENAI_API_KEY"],
-            dangerouslyAllowBrowser: true,
-        });
-
         try {
-            const response = await openai.chat.completions.create({
-                model: "gpt-3.5-turbo",
-                messages: [
-                    {
-                        role: "system",
-                        content:
-                            "Generate a coding interview question with a uniquely selected difficulty level (easy, medium, or hard). The question should be suitable for a coding interview at top tech companies like Google, Facebook, Amazon, Microsoft, etc. The questions should be strictly unique with no repitation. Include the following details in your response, each clearly separated:\n1. **Question:** Provide the coding interview question. \n2. **Examples:** Include example inputs and outputs to illustrate how the problem and solution work. \n3. **Solution:** Give a detailed solution to the problem using only java programming language. \n4. **Explanation:** Provide an explanation of how the solution works. \n5. **Time Complexity:** Analyze the time complexity of the solution. \n6. **Space Complexity:** Analyze the space complexity of the solution. \nUse this clear separator (`**`) before and after heading title for each section without deviation. Please stick to the formatting style mentioned above. Your response should strictly adhere to this formatting guideline to ensure clarity and consistency.",
+            const response = await fetch(
+                "https://ooruv9byzj.execute-api.us-east-2.amazonaws.com/beta/",
+                {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
                     },
-                    { role: "user", content: "Generate the question" },
-                ],
-            });
+                }
+            );
 
-            console.log(response);
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
 
-            const apiResponseContent = response.choices[0].message.content;
+            const apiResponse = await response.json();
+            const apiResponseContent = JSON.parse(apiResponse.body);
             const parsedSections = parseApiResponse(apiResponseContent);
             setSections(parsedSections);
         } catch (error) {
-            console.error("Error fetching data from OpenAI:", error);
+            console.error("Error fetching data from backend:", error);
         }
 
         setIsLoading(false);
