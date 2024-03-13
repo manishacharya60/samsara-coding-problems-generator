@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Samsara Coding Problem Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Samsara Coding Problem Generator is a React-based web application that leverages the OpenAI API to generate random coding problems, complete with solutions and explanations. The project is divided into two main parts: the backend for API calls and the frontend for data fetching and displaying.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Follow the instruction below to install and run the react app on your system:
 
-### `npm start`
+1. Clone the project into your system
+    ```
+    git clone https://github.com/manishacharya60/samsara-coding-problems-generator.git
+    ```
+2. If you want to run the `backend` locally, go into the `backend` folder and run the following command:
+    ```
+    $ node .
+    ```
+    By default, the backend runs on [http://localhost:8080](http://localhost:8080)
+3. Then, go back to the `frontend` folder and run the following commands
+    ```
+    $ npm install
+    ```
+4. In the `fetchdata()` function update your API URL with `http://localhost:8080`
+5. Finally, run the following command
+    ```
+    $ npm start
+    ```
+    By default, the frontend runs on [http://localhost:3000](http://localhost:3000)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A few features I have implemented in this project are:
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Question and Solution tab for the separation of contents.
+2. Question includes exmaples to implement and solution contains the solution in Java along with explanation, time complexity and space complexity.  
+3. Uniquely generated questions on every fetch.
